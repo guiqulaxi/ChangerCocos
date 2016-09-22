@@ -27,3 +27,14 @@
 *.exe
 *.out
 *.app
+Changer/proj.android-studio
+Changer/proj.win32
+Changer/proj.android
+Changer/proj.win8.1-universal
+Changer/proj.ios_mac
+Changer/cocos2d
+Changer/proj.linux
+Changer/proj.tizen
+Changer/proj.win10
+Changer
+.gitignore.swp
