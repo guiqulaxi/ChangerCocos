@@ -12,7 +12,7 @@
 #define DEFINE_COM_BEGIN static unsigned __id = 0;
 #define DEFINE_COM_END Cid Entity::Component::numCids = __id;
 
-#define REGISTER_COM(_CLASS_NAME_, _PARAM_NAME_) _PARAM_NAME_(Entity::get<_CLASS_NAME_>(__id)),
+#define REGISTER_COM(_CLASS_NAME_, _PARAM_NAME_) _PARAM_NAME_(Entity::get<_CLASS_NAME_>(_id)),
 #define REGISTER_COM_BEGIN System::Ent::Ent(Eid _id):
 #define REGISTER_COM_END id(_id){}
 

@@ -14,7 +14,6 @@ MoveCom::MoveCom(cocos2d::Vec2 pos, cocos2d::Vec2 speed)
     : pos(pos)
     , speed(speed)
 {
-    printf("**** %f, %f", speed.x, speed.y);
 }
 
 MoveCom::MoveCom()

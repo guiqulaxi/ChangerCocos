@@ -17,14 +17,10 @@ void MoveSystem::tick(float dt)
     {
         Ent e(id);
         MoveCom& move = e.move;
-
-        cocos2d::log("== %f, %f", move.pos.x, move.pos.y);
         
         if(move.empty())
             continue;
         
         move.pos += move.speed * dt;
-        
-        cocos2d::log("%f, %f", move.pos.x, move.pos.y);
     }
 }
