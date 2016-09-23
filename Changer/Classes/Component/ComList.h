@@ -13,6 +13,7 @@
 
 #include "MoveCom.h"
 #include "RenderCom.h"
+#include "CollisionCom.h"
 
 struct System::Ent
 {
@@ -21,6 +22,7 @@ struct System::Ent
     //BEGIN
     MoveCom& move;
     RenderCom& render;
+    CollisionCom& collision;
     //END
     
     Ent(Eid _id);

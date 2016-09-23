@@ -21,8 +21,9 @@ void RenderSystem::tick(float dt)
         if(render.empty())
             continue;
         
-        if(move.empty())
-            continue;
+        // FIXME
+//        if(move.empty())
+//            continue;
         
         render.sprite->setPosition(move.pos);
     }

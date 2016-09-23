@@ -10,6 +10,8 @@ public:
 
     virtual bool init();
     
+    void initEvent();
+    
     void initEntity();
     
     virtual void update(float dt);

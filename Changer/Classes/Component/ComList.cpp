@@ -16,12 +16,16 @@
 #define REGISTER_COM_BEGIN System::Ent::Ent(Eid _id):
 #define REGISTER_COM_END id(_id){}
 
+// define a component
 DEFINE_COM_BEGIN
 DEFINE_COM(MoveCom)
 DEFINE_COM(RenderCom)
+DEFINE_COM(CollisionCom)
 DEFINE_COM_END
 
+// register a component
 REGISTER_COM_BEGIN
 REGISTER_COM(MoveCom, move)
 REGISTER_COM(RenderCom, render)
+REGISTER_COM(CollisionCom, collision)
 REGISTER_COM_END
