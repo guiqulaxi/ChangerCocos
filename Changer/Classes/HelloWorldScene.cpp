@@ -8,6 +8,7 @@
 #include "System/RenderSystem.h"
 #include "System/InputSystem.h"
 #include "System/CollisionSystem.h"
+#include "System/BlowFlySystem.h"
 
 USING_NS_CC;
 
@@ -55,16 +56,27 @@ void HelloWorld::initEvent()
 
 void HelloWorld::initEntity()
 {
+    // player
     Eid id = Entity::create();
-    Entity::addComponent(id, new MoveCom(Vec2(100, 100), Vec2(50, 20)));
-    Entity::addComponent(id, new RenderCom("CloseNormal.png", this));
-    Entity::addComponent(id, new CollisionCom(Vec2(19, 6), Size(40, 20)));
+    Entity::addComponent(id, new InputCom(1));
+    Entity::addComponent(id, new PositionCom(Vec2(100, 100)));
+    Entity::addComponent(id, new MoveCom(Vec2(0, 0)));
+    Entity::addComponent(id, new RenderCom("player.png", this));
+    Entity::addComponent(id, new CollisionCom(Vec2(19, 6), Size(40, 20), kCollisionType::kPlayer));
+    
+    // monster
+    id = Entity::create();
+    Entity::addComponent(id, new PositionCom(Vec2(300, 200)));
+    Entity::addComponent(id, new MoveCom(Vec2(0, 0)));
+    Entity::addComponent(id, new RenderCom("player.png", this));
+    Entity::addComponent(id, new CollisionCom(Vec2(19, 6), Size(40, 20), kCollisionType::kMonster));
 }
 
 void HelloWorld::update(float dt)
 {
     InputSystem::tick(dt);
-    MoveSystem::tick(dt);
     CollisionSystem::tick(dt);
+    BlowFlySystem::tick(dt);
+    MoveSystem::tick(dt);
     RenderSystem::tick(dt);
 }

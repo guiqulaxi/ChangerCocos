@@ -10,7 +10,7 @@
 
 #include "Core/InputManager.h"
 #include "Component/ComList.h"
-#include "common.h"
+#include "Core/common.h"
 
 USING_NS_CC;
 
@@ -21,13 +21,16 @@ void InputSystem::tick(float dt)
     for(Eid id : all)
     {
         System::Ent e(id);
+        InputCom& input = e.input;
         MoveCom& move = e.move;
         
-        if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_LEFT_ARROW))
+        if(input.empty()) continue;
+        
+        if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_A))
         {
             move.speed.x = -kPlayerSpeed;
         }
-        else if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_RIGHT_ARROW))
+        else if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_D))
         {
             move.speed.x = kPlayerSpeed;
         }
@@ -35,11 +38,11 @@ void InputSystem::tick(float dt)
             move.speed.x = .0f;
         }
         
-        if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_UP_ARROW))
+        if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_W))
         {
             move.speed.y = kPlayerSpeed;
         }
-        else if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_DOWN_ARROW))
+        else if(inputMgr->isKeyDown(cocos2d::EventKeyboard::KeyCode::KEY_S))
         {
             move.speed.y = -kPlayerSpeed;
         }

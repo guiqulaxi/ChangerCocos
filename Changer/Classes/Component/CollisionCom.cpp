@@ -10,14 +10,15 @@
 
 USING_NS_CC;
 
-CollisionCom::CollisionCom(Vec2 pos, Size size)
+CollisionCom::CollisionCom(Vec2 pos, Size size, kCollisionType collisionType)
     : pos(pos)
     , size(size)
+    , collisionType(collisionType)
 {
 }
 
 CollisionCom::CollisionCom()
-    : CollisionCom(Vec2::ZERO, Size::ZERO)
+: CollisionCom(Vec2::ZERO, Size::ZERO, kCollisionType::kNone)
 {
 }
 

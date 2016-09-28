@@ -16,11 +16,15 @@ void MoveSystem::tick(float dt)
     for(Eid id : all)
     {
         Ent e(id);
+        PositionCom& position = e.position;
         MoveCom& move = e.move;
         
         if(move.empty())
             continue;
         
-        move.pos += move.speed * dt;
+        if(position.empty())
+            continue;
+        
+        position.pos += move.speed * dt;
     }
 }

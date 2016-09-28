@@ -18,14 +18,20 @@
 
 // define a component
 DEFINE_COM_BEGIN
+DEFINE_COM(PositionCom)
 DEFINE_COM(MoveCom)
+DEFINE_COM(BlowFlyCom)
 DEFINE_COM(RenderCom)
 DEFINE_COM(CollisionCom)
+DEFINE_COM(InputCom)
 DEFINE_COM_END
 
 // register a component
 REGISTER_COM_BEGIN
+REGISTER_COM(PositionCom, position)
 REGISTER_COM(MoveCom, move)
+REGISTER_COM(BlowFlyCom, blowFly)
 REGISTER_COM(RenderCom, render)
 REGISTER_COM(CollisionCom, collision)
+REGISTER_COM(InputCom, input)
 REGISTER_COM_END

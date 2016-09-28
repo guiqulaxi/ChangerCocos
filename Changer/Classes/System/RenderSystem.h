@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "ECS/EntityFu.h"
 
+/// 渲染系统
 class RenderSystem : public System
 {
 public:

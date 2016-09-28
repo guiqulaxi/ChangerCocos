@@ -11,6 +11,8 @@
 
 #include "ECS/EntityFu.h"
 
+/// 输入系统
+/// 用来处理一切外部设备输入
 class InputSystem : public Entity::Component
 {
 public:

@@ -12,14 +12,14 @@
 #include "cocos2d.h"
 #include "ECS/EntityFu.h"
 
+/// 移动组件
 struct MoveCom : Entity::Component
 {
     CREATE_CID;
     
-    cocos2d::Vec2 pos;//position
     cocos2d::Vec2 speed;
     
-    MoveCom(cocos2d::Vec2 pos, cocos2d::Vec2 speed);
+    MoveCom(cocos2d::Vec2 speed);
     MoveCom();
     
     virtual bool empty() const;

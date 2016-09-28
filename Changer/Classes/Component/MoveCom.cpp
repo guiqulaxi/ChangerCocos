@@ -10,14 +10,13 @@
 
 USING_NS_CC;
 
-MoveCom::MoveCom(cocos2d::Vec2 pos, cocos2d::Vec2 speed)
-    : pos(pos)
-    , speed(speed)
+MoveCom::MoveCom(cocos2d::Vec2 speed)
+: speed(speed)
 {
 }
 
 MoveCom::MoveCom()
-    : MoveCom(Vec2(0, 0), Vec2(0, 0))
+    : MoveCom(Vec2(0,0))
 {
 }
 
